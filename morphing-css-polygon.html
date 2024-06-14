@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Morphing CSS Polygon" />
+    <title>Document</title>
+    <link rel="stylesheet" href="properties.css" />
+    <link rel="stylesheet" href="keyframes.css" />
+    <style>
+      .grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1em;
+        align-content: center;
+        height: 100vh;
+        background: #f0f0f0;
+      }
+
+      .polygon-4 {
+        justify-self: center;
+        width: var(--width);
+        height: var(--height);
+        clip-path: polygon(
+          var(--x-1) var(--y-1),
+          var(--x-2) var(--y-2),
+          var(--x-3) var(--y-3),
+          var(--x-4) var(--y-4),
+          var(--x-5) var(--y-5)
+        );
+        background-color: rgb(172, 232, 68);
+        border: solid 30px red;
+
+        /* transition: all 2s ease-in-out; */
+      }
+
+      .polygon-4:hover {
+        animation-name: polygon-4-keyframes;
+        animation-duration: 3s;
+        animation-iteration-count: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-wrapper">
+      <div class="polygon-4"></div>
+    </div>
+  </body>
+</html>

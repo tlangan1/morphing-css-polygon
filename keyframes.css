@@ -1,0 +1,131 @@
+@keyframes polygon-4-keyframes {
+  0% {
+    --side-count: 3;
+    --x-1: calc(
+      calc(sin(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-1: calc(
+      calc(cos(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-2: calc(
+      calc(sin(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-2: calc(
+      calc(cos(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-3: calc(
+      calc(sin(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-3: calc(
+      calc(cos(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-4: calc(
+      calc(sin(1 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-4: calc(
+      calc(cos(1 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-5: calc(
+      calc(sin(2 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-5: calc(
+      calc(cos(2 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+  }
+  50% {
+    --side-count: 4;
+    --x-1: calc(
+      calc(sin(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-1: calc(
+      calc(cos(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-2: calc(
+      calc(sin(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-2: calc(
+      calc(cos(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-3: calc(
+      calc(sin(1 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-3: calc(
+      calc(cos(1 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-4: calc(
+      calc(sin(2 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-4: calc(
+      calc(cos(2 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-5: calc(
+      calc(sin(3 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-5: calc(
+      calc(cos(3 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+  }
+  100% {
+    --side-count: 5;
+    --x-1: calc(
+      calc(sin(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-1: calc(
+      calc(cos(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-2: calc(
+      calc(sin(1 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-2: calc(
+      calc(cos(1 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-3: calc(
+      calc(sin(2 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-3: calc(
+      calc(cos(2 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-4: calc(
+      calc(sin(3 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-4: calc(
+      calc(cos(3 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --x-5: calc(
+      calc(sin(4 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+    --y-5: calc(
+      calc(cos(4 * 2 * pi / var(--side-count)) * var(--width) / 2) +
+        var(--width) / 2
+    );
+  }
+}

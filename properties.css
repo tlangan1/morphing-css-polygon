@@ -1,0 +1,70 @@
+:root {
+  --height: 200px;
+  --width: var(--height);
+}
+
+@property --side-count {
+  syntax: "<number>";
+  initial-value: 3;
+  inherits: false;
+}
+
+@property --x-1 {
+  syntax: "<length>";
+  initial-value: 100px;
+  inherits: false;
+}
+
+@property --y-1 {
+  syntax: "<length>";
+  initial-value: 200px;
+  inherits: false;
+}
+
+@property --x-2 {
+  syntax: "<length>";
+  initial-value: 100px;
+  inherits: false;
+}
+
+@property --y-2 {
+  syntax: "<length>";
+  initial-value: 200px;
+  inherits: false;
+}
+
+@property --x-3 {
+  syntax: "<length>";
+  initial-value: 100px;
+  inherits: false;
+}
+
+@property --y-3 {
+  syntax: "<length>";
+  initial-value: 200px;
+  inherits: false;
+}
+
+@property --x-4 {
+  syntax: "<length>";
+  initial-value: 186px;
+  inherits: false;
+}
+
+@property --y-4 {
+  syntax: "<length>";
+  initial-value: 50px;
+  inherits: false;
+}
+
+@property --x-5 {
+  syntax: "<length>";
+  initial-value: 13px;
+  inherits: false;
+}
+
+@property --y-5 {
+  syntax: "<length>";
+  initial-value: 50px;
+  inherits: false;
+}
