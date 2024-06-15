@@ -4,141 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Morphing CSS Polygon" />
-    <title>Document</title>
+    <title>Morphing CSS Polygon</title>
     <link rel="stylesheet" href="properties.css" />
     <link rel="stylesheet" href="keyframes.css" />
-    <style>
-      @keyframes fadeIn {
-        33% {
-          --side-count: 4;
-        }
-        67% {
-          --side-count: 5;
-        }
-      }
-
-      .polygon-4 {
-        --side-count: 3;
-        --x-1: calc(
-          calc(
-              sin(
-                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --y-1: calc(
-          calc(
-              cos(
-                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --x-2: calc(
-          calc(
-              sin(
-                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --y-2: calc(
-          calc(
-              cos(
-                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --x-3: calc(
-          calc(
-              sin(
-                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --y-3: calc(
-          calc(
-              cos(
-                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --x-4: calc(
-          calc(
-              sin(
-                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --y-4: calc(
-          calc(
-              cos(
-                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --x-5: calc(
-          calc(
-              sin(
-                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        --y-5: calc(
-          calc(
-              cos(
-                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
-                    pi / var(--side-count)
-                ) * var(--width) / 2
-            ) + var(--width) / 2
-        );
-        animation: 2s fadeIn infinite;
-        /* background: rgba(0 0 0 / var(--opacity)); */
-      }
-
-      .grid-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        row-gap: 1em;
-        align-content: center;
-        height: 100vh;
-        background: #f0f0f0;
-      }
-
-      .polygon-4 {
-        justify-self: center;
-        width: var(--width);
-        height: var(--height);
-        clip-path: polygon(
-          var(--x-1) var(--y-1),
-          var(--x-2) var(--y-2),
-          var(--x-3) var(--y-3),
-          var(--x-4) var(--y-4),
-          var(--x-5) var(--y-5)
-        );
-        background-color: rgb(172, 232, 68);
-        border: solid 30px red;
-
-        /* transition: all 2s ease-in-out; */
-      }
-
-      .polygon-4:hover {
-        animation-name: polygon-4-keyframes;
-        animation-duration: 3s;
-        animation-iteration-count: 2;
-      }
-    </style>
+    <link rel="stylesheet" href="polygon.css" />
   </head>
   <body>
     <div class="grid-wrapper">
-      <div class="polygon-4"></div>
+      <header>
+        <h1>Click any polygon to pause or restart its animation.</h1>
+        <h2>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip-ink"
+            >Click this to read about the text-decoration-skip-ink CSS
+            property.</a
+          >
+        </h2>
+      </header>
+      <div class="polygon"></div>
+      <div class="polygon"></div>
+      <div class="polygon"></div>
     </div>
   </body>
+  <script>
+    var polygon = document.querySelector(".polygon:nth-child(2)");
+    polygon.style.setProperty("--max-sides", 4);
+    polygon = document.querySelector(".polygon:nth-child(3)");
+    polygon.style.setProperty("--max-sides", 3);
+
+    document.querySelectorAll(".polygon").forEach((polygon, index) => {
+      polygon.addEventListener("click", () => {
+        if (polygon.style.getPropertyValue("animation-play-state"))
+          polygon.style.removeProperty("animation-play-state");
+        else polygon.style.setProperty("animation-play-state", "paused");
+      });
+    });
+  </script>
 </html>

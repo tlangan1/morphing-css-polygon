@@ -1,7 +1,7 @@
 :root {
   --height: 200px;
   --width: var(--height);
-  --max-sides: 3;
+  --max-sides: 5;
 }
 
 @property --side-count {
