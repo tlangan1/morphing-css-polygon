@@ -1,7 +1,7 @@
 @keyframes polygon-4-keyframes {
   0% {
     --side-count: 3;
-    --x-1: calc(
+    /* --x-1: calc(
       calc(sin(0 * 2 * pi / var(--side-count)) * var(--width) / 2) +
         var(--width) / 2
     );
@@ -40,7 +40,7 @@
     --y-5: calc(
       calc(cos(2 * 2 * pi / var(--side-count)) * var(--width) / 2) +
         var(--width) / 2
-    );
+    ); */
   }
   50% {
     --side-count: 4;

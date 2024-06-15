@@ -8,9 +8,104 @@
     <link rel="stylesheet" href="properties.css" />
     <link rel="stylesheet" href="keyframes.css" />
     <style>
+      @keyframes fadeIn {
+        33% {
+          --side-count: 4;
+        }
+        67% {
+          --side-count: 5;
+        }
+      }
+
+      .polygon-4 {
+        --side-count: 3;
+        --x-1: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-1: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-2: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-2: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-3: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-3: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-4: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-4: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-5: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-5: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        animation: 2s fadeIn infinite;
+        /* background: rgba(0 0 0 / var(--opacity)); */
+      }
+
       .grid-wrapper {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         row-gap: 1em;
         align-content: center;
         height: 100vh;
