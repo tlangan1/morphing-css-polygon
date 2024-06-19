@@ -8,11 +8,34 @@
   background: #f0f0f0;
 }
 
+.grid-wrapper > div {
+  justify-self: center;
+}
+
 header {
   grid-area: header;
   justify-self: center;
   text-decoration-skip-ink: all;
 }
+
+.polygon {
+  width: var(--width);
+  height: var(--height);
+  clip-path: polygon(
+    var(--x-1) var(--y-1),
+    var(--x-2) var(--y-2),
+    var(--x-3) var(--y-3),
+    var(--x-4) var(--y-4),
+    var(--x-5) var(--y-5),
+    var(--x-6) var(--y-6)
+  );
+  background-color: rgb(172, 232, 68);
+  border: solid 30px red;
+}
+
+/* .polygon:hover {
+        animation-play-state: paused;
+      } */
 
 .polygon {
   --side-count: 3;
@@ -96,25 +119,21 @@ header {
           ) * var(--width) / 2
       ) + var(--width) / 2
   );
-  animation: 10s fadeIn infinite;
-  /* background: rgba(0 0 0 / var(--opacity)); */
-}
-
-.polygon {
-  justify-self: center;
-  width: var(--width);
-  height: var(--height);
-  clip-path: polygon(
-    var(--x-1) var(--y-1),
-    var(--x-2) var(--y-2),
-    var(--x-3) var(--y-3),
-    var(--x-4) var(--y-4),
-    var(--x-5) var(--y-5)
+  --x-6: calc(
+    calc(
+        sin(
+            calc(max(var(--side-count) - (var(--max-sides) - 6), 0)) * 2 * pi /
+              var(--side-count)
+          ) * var(--width) / 2
+      ) + var(--width) / 2
   );
-  background-color: rgb(172, 232, 68);
-  border: solid 30px red;
+  --y-6: calc(
+    calc(
+        cos(
+            calc(max(var(--side-count) - (var(--max-sides) - 6), 0)) * 2 * pi /
+              var(--side-count)
+          ) * var(--width) / 2
+      ) + var(--width) / 2
+  );
+  animation: 10s fadeIn infinite;
 }
-
-/* .polygon:hover {
-        animation-play-state: paused;
-      } */

@@ -1,8 +1,11 @@
 @keyframes fadeIn {
-  50% {
+  33% {
     --side-count: 4;
   }
-  100% {
+  67% {
     --side-count: 5;
+  }
+  100% {
+    --side-count: 6;
   }
 }

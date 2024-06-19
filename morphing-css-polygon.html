@@ -21,16 +21,27 @@
           >
         </h2>
       </header>
-      <div class="polygon"></div>
-      <div class="polygon"></div>
-      <div class="polygon"></div>
+      <div>
+        <div class="polygon"></div>
+        <p>The good one!</p>
+      </div>
+      <div>
+        <div class="polygon"></div>
+        <p>This one has max-sides set to 3</p>
+      </div>
+      <div>
+        <div class="polygon"></div>
+        <p>This one has max-sides set to 4</p>
+      </div>
     </div>
   </body>
   <script>
-    var polygon = document.querySelector(".polygon:nth-child(2)");
-    polygon.style.setProperty("--max-sides", 4);
-    polygon = document.querySelector(".polygon:nth-child(3)");
+    var polygon = document.querySelector(
+      ".grid-wrapper :nth-child(3) .polygon"
+    );
     polygon.style.setProperty("--max-sides", 3);
+    polygon = document.querySelector(".grid-wrapper :nth-child(4) .polygon");
+    polygon.style.setProperty("--max-sides", 4);
 
     document.querySelectorAll(".polygon").forEach((polygon, index) => {
       polygon.addEventListener("click", () => {

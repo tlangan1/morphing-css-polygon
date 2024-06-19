@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      svg {
+        --side-count: 1;
+        --max-sides: 6;
+        --width: 150px;
+        --x-1: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-1: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-2: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-2: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-3: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-3: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-4: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-4: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-5: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-5: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --x-6: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 6), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        --y-6: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 6), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2
+        );
+        border: 5px solid #000;
+
+        --cx-start: var(--x-1);
+        --cy-start: var(--y-1)
+
+        --cx-1-step-1: var(--cx-start);
+        --cy-1-step-1: 150;
+        --cx-1-step-2: 150;
+        --cy-1-step-2: var(--y-1);
+        --cx-1-end: var(--x-1);
+        --cy-1-end: var(--y-1);
+
+        --cx-2-step-1: var(--cx-start);
+        --cy-2-step-1: 150;
+        --cx-2-step-2: 50;
+        --cy-2-step-2: var(--y-2);
+        --cx-2-end: var(--x-2);
+        --cy-2-end: var(--y-2);
+
+        --cx-3-step-1: var(--cx-start);
+        --cy-3-step-1: var(--cy-start);
+        --cx-3-step-2: var(--x-3);
+        --cy-3-step-2: var(--y-3);
+        --cx-3-end: var(--x-3);
+        --cy-3-end: var(--y-3);
+
+        --cx-4-step-1: var(--cx-start);
+        --cy-4-step-1: var(--cy-start);
+        --cx-4-step-2: var(--x-4);
+        --cy-4-step-2: var(--y-4);
+        --cx-4-end: var(--x-4);
+        --cy-4-end: var(--y-4);
+      }
+
+      @keyframes move-point-1 {
+        0% {
+          --side-count: 1;
+          cx: var(--x-1);
+          cy: var(--y-1);
+        }
+        33% {
+          --side-count: 2;
+          cx: var(--x-1);
+          cy: var(--y-1);
+        }
+        67% {
+          --side-count: 3;
+          cx: var(--x-1);
+          cy: var(--y-1);
+        }
+        100% {
+          --side-count: 4;
+          cx: var(--x-1);
+          cy: var(--y-1);
+        }
+      }
+
+      @keyframes move-point-2 {
+        0% {
+          cx: var(--cx-start);
+          cy: var(--cy-start);
+        }
+        33% {
+          cx: var(--cx-2-step-1);
+          cy: var(--cy-2-step-1);
+        }
+        67% {
+          cx: var(--cx-2-step-2);
+          cy: var(--cy-2-step-2);
+        }
+        100% {
+          cx: var(--cx-2-end);
+          cy: var(--cy-2-end);
+        }
+      }
+
+      @keyframes move-point-3 {
+        0% {
+          cx: var(--cx-start);
+          cy: var(--cy-start);
+        }
+        33% {
+          cx: var(--cx-3-step-1);
+          cy: var(--cy-3-step-1);
+        }
+        67% {
+          cx: var(--cx-3-step-2);
+          cy: var(--cy-3-step-2);
+        }
+        100% {
+          cx: var(--cx-3-end);
+          cy: var(--cy-3-end);
+        }
+      }
+
+      @keyframes move-point-4 {
+        0% {
+          cx: var(--cx-start);
+          cy: var(--cy-start);
+        }
+        33% {
+          cx: var(--cx-4-step-1);
+          cy: var(--cy-4-step-1);
+        }
+        67% {
+          cx: var(--cx-4-step-2);
+          cy: var(--cy-4-step-2);
+        }
+        100% {
+          cx: var(--cx-4-end);
+          cy: var(--cy-4-end);
+        }
+      }
+
+      #point-1 {
+        animation: 5s ease-in 1 both move-point-1;
+      }
+      #point-2 {
+        animation: 5s ease-in 1 both move-point-2;
+      }
+      #point-3 {
+        animation: 5s ease-in 1 both move-point-3;
+      }
+      #point-4 {
+        animation: 5s ease-in 1 both move-point-4;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      height="300px"
+      width="300px"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 200"
+    >
+      <circle id="point-1" fill="#60f" cx="100" cy="50" r="4" />
+      <circle id="point-2" fill="#60f" cx="100" cy="50" r="2" />
+      <circle id="point-3" fill="#60f" cx="100" cy="50" r="2" />
+      <circle id="point-4" fill="#60f" cx="100" cy="50" r="2" />
+    </svg>
+  </body>
+</html>

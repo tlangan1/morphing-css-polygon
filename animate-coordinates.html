@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      :root {
+        --svg-width: 300px;
+        --svg-height: 300px;
+        --side-count: 6;
+        --max-sides: 6;
+        --width: 250px;
+        --offset: (var(--svg-width) - var(--width))/2;
+
+        --x-1: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + (var(--width) / 2) + var(--offset)
+        );
+        --y-1: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 1), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --x-2: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --y-2: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 2), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --x-3: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --y-3: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 3), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --x-4: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --y-4: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 4), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --x-5: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --y-5: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 5), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --x-6: calc(
+          calc(
+              sin(
+                  calc(max(var(--side-count) - (var(--max-sides) - 6), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+        --y-6: calc(
+          calc(
+              cos(
+                  calc(max(var(--side-count) - (var(--max-sides) - 6), 0)) * 2 *
+                    pi / var(--side-count)
+                ) * var(--width) / 2
+            ) + var(--width) / 2 + var(--offset)
+        );
+      }
+
+      svg {
+        border: 1px solid #000;
+        height: var(--svg-height);
+        width: var(--svg-width);
+        background-color: aqua;
+      }
+
+      @keyframes animate-points {
+        0% {
+          --side-count: 1;
+        }
+        20% {
+          --side-count: 2;
+        }
+        40% {
+          --side-count: 3;
+        }
+        60% {
+          --side-count: 4;
+        }
+        80% {
+          --side-count: 5;
+        }
+        100% {
+          --side-count: 6;
+        }
+      }
+
+      #point-8 {
+        fill: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <circle id="point-1" fill="#fff" cx="150" cy="150" r="4" />
+        <circle id="point-2" fill="#fff" cx="150" cy="150" r="4" />
+        <circle id="point-3" fill="#fff" cx="150" cy="150" r="4" />
+        <circle id="point-4" fill="#fff" cx="150" cy="150" r="4" />
+        <circle id="point-5" fill="#fff" cx="150" cy="150" r="4" />
+        <circle id="point-6" fill="#fff" cx="150" cy="150" r="4" />
+        <circle id="point-7" fill="#000" cx="150" cy="150" r="2">
+          <animateMotion
+            dur="1s"
+            repeatCount="indefinite"
+            path="M 0,0 v 150 z"
+          />
+        </circle>
+        <circle id="point-8" fill="#000" cx="150" cy="150" r="6" />
+      </svg>
+    </div>
+  </body>
+  <script>
+    document
+      .querySelector("#point-1")
+      .setAttribute(
+        "cx",
+        getComputedStyle(document.documentElement).getPropertyValue("--x-1")
+      );
+    document
+      .querySelector("#point-1")
+      .setAttribute(
+        "cy",
+        getComputedStyle(document.documentElement).getPropertyValue("--y-1")
+      );
+    document
+      .querySelector("#point-2")
+      .setAttribute(
+        "cx",
+        getComputedStyle(document.documentElement).getPropertyValue("--x-2")
+      );
+    document
+      .querySelector("#point-2")
+      .setAttribute(
+        "cy",
+        getComputedStyle(document.documentElement).getPropertyValue("--y-2")
+      );
+    document
+      .querySelector("#point-3")
+      .setAttribute(
+        "cx",
+        getComputedStyle(document.documentElement).getPropertyValue("--x-3")
+      );
+    document
+      .querySelector("#point-3")
+      .setAttribute(
+        "cy",
+        getComputedStyle(document.documentElement).getPropertyValue("--y-3")
+      );
+    document
+      .querySelector("#point-4")
+      .setAttribute(
+        "cx",
+        getComputedStyle(document.documentElement).getPropertyValue("--x-4")
+      );
+    document
+      .querySelector("#point-4")
+      .setAttribute(
+        "cy",
+        getComputedStyle(document.documentElement).getPropertyValue("--y-4")
+      );
+    document
+      .querySelector("#point-5")
+      .setAttribute(
+        "cx",
+        getComputedStyle(document.documentElement).getPropertyValue("--x-5")
+      );
+    document
+      .querySelector("#point-5")
+      .setAttribute(
+        "cy",
+        getComputedStyle(document.documentElement).getPropertyValue("--y-5")
+      );
+    document
+      .querySelector("#point-6")
+      .setAttribute(
+        "cx",
+        getComputedStyle(document.documentElement).getPropertyValue("--x-6")
+      );
+    document
+      .querySelector("#point-6")
+      .setAttribute(
+        "cy",
+        getComputedStyle(document.documentElement).getPropertyValue("--y-6")
+      );
+  </script>
+</html>
