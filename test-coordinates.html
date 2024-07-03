@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
       div {
         display: grid;
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center; */
+        /* align-items: center; */
         height: 100vh;
       }
       :root {
-        --svg-width: 300px;
-        --svg-height: 300px;
+        --svg-width: 200px;
+        --svg-height: 200px;
         --side-count: 6;
         --max-sides: 6;
-        --width: 250px;
+        --width: 100px;
         --offset: (var(--svg-width) - var(--width))/2;
 
         --x-1: calc(
